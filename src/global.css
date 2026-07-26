@@ -175,6 +175,13 @@ body[data-custom-background="true"]::before {
   will-change: filter;
 }
 
+/* komari-appearance.js 共存：配置了多图/视频背景时脚本给 html 加 .komari-appearance-active，
+   让出 deer 不透明的 body 底色，使脚本注入的 z-index:-10 背景层露出。
+   deer 原生单图（body[data-custom-background]）不受影响——其 ::before 位于 z-index:-1，仍覆盖本层。 */
+html.komari-appearance-active body {
+  background-color: transparent !important;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   background: transparent;

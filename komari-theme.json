@@ -7,254 +7,17 @@
   "url": "https://github.com/DeerYang/komari-deer",
   "preview": "preview.png",
   "configuration": {
+    "type": "managed",
     "name": "Theme Settings",
     "icon": "Palette",
     "description": "Komari Deer theme settings",
-    "managedFields": [
-      {
-        "key": "language",
-        "type": "option",
-        "label": "Default language",
-        "options": [
-          "auto",
-          "en",
-          "zh-CN",
-          "zh-TW"
-        ],
-        "default": "auto"
-      },
-      {
-        "key": "nodeViewMode",
-        "type": "option",
-        "label": "Default node view",
-        "options": [
-          "grid",
-          "table"
-        ],
-        "default": "grid"
-      },
-      {
-        "key": "backgroundImageUrl",
-        "type": "text",
-        "label": "Background image URL",
-        "default": ""
-      },
-      {
-        "key": "backgroundBlurEnabled",
-        "type": "bool",
-        "label": "Enable background blur",
-        "default": false
-      },
-      {
-        "key": "backgroundBlurType",
-        "type": "option",
-        "label": "Background blur type",
-        "options": [
-          "soft",
-          "glass"
-        ],
-        "default": "soft"
-      },
-      {
-        "key": "backgroundBlurIntensity",
-        "type": "number",
-        "label": "Background blur intensity",
-        "default": 35
-      }
-    ],
-    "fields": [
-      {
-        "type": "title",
-        "name": "Theme Settings"
-      },
-      {
-        "key": "language",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认语言",
-          "en-US": "Default Language"
-        },
-        "default": "auto",
-        "options": "auto,en,zh-CN,zh-TW"
-      },
-      {
-        "key": "nodeViewMode",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认节点视图",
-          "en-US": "Default Node View"
-        },
-        "default": "grid",
-        "options": "grid,table"
-      },
-      {
-        "key": "backgroundImageUrl",
-        "type": "string",
-        "name": {
-          "zh-CN": "背景图片链接",
-          "en-US": "Background Image URL"
-        },
-        "default": ""
-      },
-      {
-        "key": "backgroundBlurEnabled",
-        "type": "switch",
-        "name": {
-          "zh-CN": "启用背景模糊",
-          "en-US": "Enable Background Blur"
-        },
-        "default": false
-      },
-      {
-        "key": "backgroundBlurType",
-        "type": "select",
-        "name": {
-          "zh-CN": "背景模糊类型",
-          "en-US": "Background Blur Type"
-        },
-        "default": "soft",
-        "options": "soft,glass"
-      },
-      {
-        "key": "backgroundBlurIntensity",
-        "type": "number",
-        "name": {
-          "zh-CN": "背景模糊强度",
-          "en-US": "Background Blur Intensity"
-        },
-        "default": 35
-      }
-    ],
-    "options": [
-      {
-        "type": "title",
-        "name": "Theme Settings"
-      },
-      {
-        "key": "language",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认语言",
-          "en-US": "Default Language"
-        },
-        "default": "auto",
-        "options": "auto,en,zh-CN,zh-TW"
-      },
-      {
-        "key": "nodeViewMode",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认节点视图",
-          "en-US": "Default Node View"
-        },
-        "default": "grid",
-        "options": "grid,table"
-      },
-      {
-        "key": "backgroundImageUrl",
-        "type": "string",
-        "name": {
-          "zh-CN": "背景图片链接",
-          "en-US": "Background Image URL"
-        },
-        "default": ""
-      },
-      {
-        "key": "backgroundBlurEnabled",
-        "type": "switch",
-        "name": {
-          "zh-CN": "启用背景模糊",
-          "en-US": "Enable Background Blur"
-        },
-        "default": false
-      },
-      {
-        "key": "backgroundBlurType",
-        "type": "select",
-        "name": {
-          "zh-CN": "背景模糊类型",
-          "en-US": "Background Blur Type"
-        },
-        "default": "soft",
-        "options": "soft,glass"
-      },
-      {
-        "key": "backgroundBlurIntensity",
-        "type": "number",
-        "name": {
-          "zh-CN": "背景模糊强度",
-          "en-US": "Background Blur Intensity"
-        },
-        "default": 35
-      }
-    ],
-    "items": [
-      {
-        "type": "title",
-        "name": "Theme Settings"
-      },
-      {
-        "key": "language",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认语言",
-          "en-US": "Default Language"
-        },
-        "default": "auto",
-        "options": "auto,en,zh-CN,zh-TW"
-      },
-      {
-        "key": "nodeViewMode",
-        "type": "select",
-        "name": {
-          "zh-CN": "默认节点视图",
-          "en-US": "Default Node View"
-        },
-        "default": "grid",
-        "options": "grid,table"
-      },
-      {
-        "key": "backgroundImageUrl",
-        "type": "string",
-        "name": {
-          "zh-CN": "背景图片链接",
-          "en-US": "Background Image URL"
-        },
-        "default": ""
-      },
-      {
-        "key": "backgroundBlurEnabled",
-        "type": "switch",
-        "name": {
-          "zh-CN": "启用背景模糊",
-          "en-US": "Enable Background Blur"
-        },
-        "default": false
-      },
-      {
-        "key": "backgroundBlurType",
-        "type": "select",
-        "name": {
-          "zh-CN": "背景模糊类型",
-          "en-US": "Background Blur Type"
-        },
-        "default": "soft",
-        "options": "soft,glass"
-      },
-      {
-        "key": "backgroundBlurIntensity",
-        "type": "number",
-        "name": {
-          "zh-CN": "背景模糊强度",
-          "en-US": "Background Blur Intensity"
-        },
-        "default": 35
-      }
-    ],
     "data": [
       {
         "type": "title",
-        "name": "Theme Settings"
+        "name": {
+          "zh-CN": "主题设置",
+          "en-US": "Theme Settings"
+        }
       },
       {
         "key": "language",
@@ -283,7 +46,11 @@
           "zh-CN": "背景图片链接",
           "en-US": "Background Image URL"
         },
-        "default": ""
+        "default": "",
+        "help": {
+          "zh-CN": "Deer 原生单图背景链接。若在下方“背景与外观”里配置了多图/视频，将由外观脚本接管背景。",
+          "en-US": "Deer's native single background image. If multi-image/video is configured below, the appearance script takes over the background."
+        }
       },
       {
         "key": "backgroundBlurEnabled",
@@ -312,6 +79,156 @@
           "en-US": "Background Blur Intensity"
         },
         "default": 35
+      },
+      {
+        "type": "title",
+        "name": {
+          "zh-CN": "背景与外观（多图 / 视频）",
+          "en-US": "Background & Appearance (multi-image / video)"
+        }
+      },
+      {
+        "key": "backgroundImages",
+        "type": "multi-image",
+        "name": {
+          "zh-CN": "桌面端背景图（随机轮换）",
+          "en-US": "Desktop Backgrounds (Random)"
+        },
+        "default": "[]",
+        "help": {
+          "zh-CN": "上传多张图片，每次刷新页面时将随机抽取一张展示。留空则降级使用下方的桌面端单图设置。",
+          "en-US": "Upload multiple images; one is picked at random on each page refresh. Leave empty to fall back to the desktop single image below."
+        }
+      },
+      {
+        "key": "backgroundImagesMobile",
+        "type": "multi-image",
+        "name": {
+          "zh-CN": "移动端背景图（随机轮换）",
+          "en-US": "Mobile Backgrounds (Random)"
+        },
+        "default": "[]",
+        "help": {
+          "zh-CN": "移动端（竖屏）随机多图设置，留空则降级使用下方的移动端单图设置。",
+          "en-US": "Random multi-image set for mobile (portrait). Leave empty to fall back to the mobile single image below."
+        }
+      },
+      {
+        "key": "backgroundImage",
+        "type": "string",
+        "name": {
+          "zh-CN": "桌面端背景图片链接（单图）",
+          "en-US": "Desktop Background Image URL"
+        },
+        "default": "",
+        "help": {
+          "zh-CN": "单张背景图片或图片 API。使用“|”分隔亮色和暗色模式，填写单个则亮暗共用（eg: https://test.com/1.png）。",
+          "en-US": "A single background image or image API. Separate light and dark with \"|\"; a single value is used for both (e.g. https://test.com/1.png)."
+        }
+      },
+      {
+        "key": "backgroundImageMobile",
+        "type": "string",
+        "name": {
+          "zh-CN": "移动端背景图片链接（单图）",
+          "en-US": "Mobile Background Image URL"
+        },
+        "default": "",
+        "help": {
+          "zh-CN": "移动端背景图片链接，与桌面端一样区分亮暗模式，留空则使用桌面端背景。",
+          "en-US": "Mobile background image URL, light/dark like desktop. Leave empty to use the desktop background."
+        }
+      },
+      {
+        "key": "backgroundAlignment",
+        "type": "string",
+        "name": {
+          "zh-CN": "背景对齐方式",
+          "en-US": "Background Alignment"
+        },
+        "default": "cover,center",
+        "help": {
+          "zh-CN": "格式为“size,position”，如 cover,center / cover,top / contain,center / fill,center。作为每张图未单独设置时的回退值。",
+          "en-US": "Format \"size,position\", e.g. cover,center / cover,top / contain,center / fill,center. Used as the fallback when a per-image value is not set."
+        }
+      },
+      {
+        "key": "enableVideoBackground",
+        "type": "switch",
+        "name": {
+          "zh-CN": "启用视频背景",
+          "en-US": "Enable Video Background"
+        },
+        "default": false,
+        "help": {
+          "zh-CN": "启用后将使用视频作为背景（在图片层之上）。",
+          "en-US": "When enabled, a video is used as the background (above the image layer)."
+        }
+      },
+      {
+        "key": "videoBackgroundUrl",
+        "type": "string",
+        "name": {
+          "zh-CN": "桌面端视频背景链接",
+          "en-US": "Desktop Video Background URL"
+        },
+        "default": "",
+        "help": {
+          "zh-CN": "视频背景链接（eg: https://test.com/1.mp4），使用“|”分隔亮暗模式。建议使用无声视频，文件较大可能影响加载。",
+          "en-US": "Video background URL (e.g. https://test.com/1.mp4); separate light/dark with \"|\". Prefer muted videos; large files may slow loading."
+        }
+      },
+      {
+        "key": "videoBackgroundUrlMobile",
+        "type": "string",
+        "name": {
+          "zh-CN": "移动端视频背景链接",
+          "en-US": "Mobile Video Background URL"
+        },
+        "default": "",
+        "help": {
+          "zh-CN": "移动端视频背景链接，留空则使用桌面端视频。",
+          "en-US": "Mobile video background URL; leave empty to use the desktop video."
+        }
+      },
+      {
+        "key": "videoBackgroundAlignment",
+        "type": "string",
+        "name": {
+          "zh-CN": "视频背景对齐方式",
+          "en-US": "Video Background Alignment"
+        },
+        "default": "",
+        "help": {
+          "zh-CN": "格式为“object-fit,position”，如 cover,center。留空则回退到上方的背景对齐方式。",
+          "en-US": "Format \"object-fit,position\", e.g. cover,center. Leave empty to fall back to Background Alignment above."
+        }
+      },
+      {
+        "key": "blurBackgroundColor",
+        "type": "string",
+        "name": {
+          "zh-CN": "磨砂玻璃背景色",
+          "en-US": "Frosted Glass Color"
+        },
+        "default": "rgba(255, 255, 255, 0.5)|rgba(0, 0, 0, 0.5)",
+        "help": {
+          "zh-CN": "推荐 rgba 颜色值，使用“|”分隔亮暗模式（eg: rgba(255,255,255,0.5)|rgba(0,0,0,0.5)）。经脚本注入为 CSS 变量供主题消费。",
+          "en-US": "Recommended rgba values, split light/dark with \"|\" (e.g. rgba(255,255,255,0.5)|rgba(0,0,0,0.5)). Injected as CSS variables for the theme to consume."
+        }
+      },
+      {
+        "key": "blurValue",
+        "type": "number",
+        "name": {
+          "zh-CN": "磨砂玻璃模糊值",
+          "en-US": "Frosted Glass Blur"
+        },
+        "default": 10,
+        "help": {
+          "zh-CN": "数值越大模糊越明显，建议 5-20，0 表示不模糊。经脚本注入为 CSS 变量 --purcarte-blur 供主题消费。",
+          "en-US": "Larger values blur more; 5-20 recommended, 0 disables. Injected as the CSS variable --purcarte-blur for the theme to consume."
+        }
       }
     ]
   }
