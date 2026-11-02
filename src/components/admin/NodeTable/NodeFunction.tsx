@@ -1,3 +1,6 @@
+import { quoteShellArgs, quotePowerShellArg } from "@/utils/shellQuote";
+import { Nat64Option } from "@/components/admin/Nat64Option";
+import { nat64InstallArgs } from "@/utils/nat64";
 import * as React from "react";
 import { z } from "zod";
 import { schema } from "@/components/admin/NodeTable/schema/node";
@@ -25,6 +28,7 @@ async function removeClient(uuid: string) {
 }
 
 type InstallOptions = {
+  nat64: boolean;
   disableWebSsh: boolean;
   disableAutoUpdate: boolean;
   ignoreUnsafeCert: boolean;
@@ -41,7 +45,8 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
   const [selectedPlatform, setSelectedPlatform] =
     React.useState<Platform>("linux");
   const [installOptions, setInstallOptions] = React.useState<InstallOptions>({
-    disableWebSsh: false,
+    nat64: true,
+      disableWebSsh: false,
     disableAutoUpdate: false,
     ignoreUnsafeCert: false,
     ghproxy: "",
@@ -51,9 +56,10 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
 
   const generateCommand = () => {
     const host = window.location.origin;
-    const token = row.original.token;
+    const token = row.original.token || "";
     let args = ["-e", host, "-t", token];
     // 根据安装选项生成参数
+    args.push(...nat64InstallArgs(installOptions.nat64, selectedPlatform));
     if (installOptions.disableWebSsh) {
       args.push("--disable-web-ssh");
     }
@@ -83,24 +89,24 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
     switch (selectedPlatform) {
       case "linux":
         finalCommand =
-          `wget -qO- https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.sh | sudo bash -s -- ` +
-          args.join(" ");
+          `wget -qO- https://raw.githubusercontent.com/zv201413/komari-agent_new/refs/heads/main/install.sh | sudo bash -s -- ` +
+          quoteShellArgs(args);
         break;
       case "windows":
         finalCommand =
           `powershell.exe -NoProfile -ExecutionPolicy Bypass -Command ` +
-          `"iwr 'https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.ps1'` +
+          `"iwr 'https://raw.githubusercontent.com/zv201413/komari-agent_new/refs/heads/main/install.ps1'` +
           ` -UseBasicParsing -OutFile 'install.ps1'; &` +
           ` '.\\install.ps1'`;
         args.forEach((arg) => {
-          finalCommand += ` '${arg}'`;
+          finalCommand += ` ${quotePowerShellArg(arg)}`;
         });
         finalCommand += `"`;
         break;
       case "macos":
         finalCommand =
-            `zsh <(curl -sL https://raw.githubusercontent.com/komari-monitor/komari-agent/refs/heads/main/install.sh) ` +
-            args.join(" ");
+            `zsh <(curl -sL https://raw.githubusercontent.com/zv201413/komari-agent_new/refs/heads/main/install.sh) ` +
+            quoteShellArgs(args);
         break;
     }
     return finalCommand;
@@ -264,6 +270,7 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
                 {t("admin.nodeTable.generatedCommand", "生成的指令")}
               </label>
               <div className="relative">
+                <Nat64Option enabled={installOptions.nat64} onChange={(nat64) => setInstallOptions((prev) => ({ ...prev, nat64 }))} />
                 <TextArea
                   disabled
                   className="w-full"
@@ -322,7 +329,7 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
               <Button variant="soft">{t("admin.nodeTable.cancel")}</Button>
             </Dialog.Close>
             <Dialog.Trigger>
-              <Button
+              <Button data-enter-submit
                 disabled={removing}
                 color="red"
                 onClick={async () => {

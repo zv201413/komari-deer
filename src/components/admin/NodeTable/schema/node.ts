@@ -17,6 +17,8 @@ export const schema = z.object({
   gpu_name: z.string().optional(),
   ipv4: z.string(),
   ipv6: z.string().optional(),
+  connection_source_ip: z.string().optional(),
+  ip_trust_eligible: z.boolean().optional(),
   region: z.string().optional(),
   mem_total: z.number().optional(),
   swap_total: z.number().optional(),

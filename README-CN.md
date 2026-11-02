@@ -75,6 +75,12 @@ npm run build
 
 如果要制作可上传到 Komari 的主题包，需要将生成的静态文件与 `komari-theme.json` 以及 Komari 主题系统需要的资源一起打包。
 
+多图、视频和玻璃效果的独立背景脚本及配置约定见
+[背景运行时规格](./docs/APPEARANCE-SCRIPT-SPEC.md)。
+
+登录与保留的编辑组件支持回车提交保存或确认；备注等多行输入仍用回车换行。
+相关交互由 `src/utils/defaultEnter.ts` 统一处理，与默认前端保持相同策略。
+
 ## 脚本
 
 - `npm run dev` - 启动 Next.js 开发服务器

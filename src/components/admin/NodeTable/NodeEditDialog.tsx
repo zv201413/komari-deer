@@ -118,7 +118,7 @@ export function EditDialog({ item }: { item: z.infer<typeof schema> }) {
           </div>
         </div>
         <Flex gap="2" align={"start"} className="mt-4">
-          <Button
+          <Button data-enter-submit
             type="submit"
             className="w-full"
             onClick={() => {

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { NodeConnectionInfo } from "../NodeConnectionInfo";
 import { schema } from "@/components/admin/NodeTable/schema/node";
 import { useIsMobile } from "@/hooks/use-mobile";
 import {
@@ -92,6 +93,7 @@ export function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
                       </IconButton>
                     </div>
                   )}
+                  <NodeConnectionInfo node={item} />
                 </div>
               </div>
               <div className="flex flex-col gap-3">
@@ -252,7 +254,7 @@ export function TableCellViewer({ item }: { item: z.infer<typeof schema> }) {
         </div>
         <DrawerFooter>
           <DrawerClose asChild>
-            <Button>{t("admin.nodeDetail.done", "完成")}</Button>
+            <Button data-enter-submit>{t("admin.nodeDetail.done", "完成")}</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

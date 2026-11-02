@@ -204,6 +204,7 @@ export const renderProviderInputs = ({
 
                     {/* 统一的保存按钮 */}
                     <SettingCardButton
+                        enterSubmit
                         bordless
                         onClick={handleSaveAll}
                     >

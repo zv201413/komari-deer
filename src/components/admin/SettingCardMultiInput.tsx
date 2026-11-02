@@ -119,7 +119,7 @@ export function SettingCardMultiInputCollapse({
           return child;
         })}
         <div>
-          <Button variant="solid" className="mt-2" onClick={handleSave} disabled={savingState}>
+          <Button data-enter-submit variant="solid" className="mt-2" onClick={handleSave} disabled={savingState}>
             {t("save")}
           </Button>
         </div>

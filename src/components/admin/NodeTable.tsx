@@ -1,4 +1,5 @@
 import * as React from "react";
+import { NodeConnectionInfo } from "./NodeConnectionInfo";
 import {
   DndContext,
   KeyboardSensor,
@@ -137,6 +138,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
               </IconButton>
             </div>
           )}
+          <NodeConnectionInfo node={row.original} />
         </div>
       );
     },

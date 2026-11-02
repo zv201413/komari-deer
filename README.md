@@ -76,6 +76,9 @@ This theme uses Next.js static export. The build output is written to `dist/`.
 npm run build
 ```
 
+The standalone background runtime and its theme configuration contract are documented in
+[the appearance script specification](./docs/APPEARANCE-SCRIPT-SPEC.md) (Chinese).
+
 To create a Komari upload package, include the generated static files together
 with `komari-theme.json` and the theme assets expected by Komari.
 
@@ -91,3 +94,10 @@ with `komari-theme.json` and the theme assets expected by Komari.
 - [tonyliuzj/komari-next](https://github.com/tonyliuzj/komari-next), the
   original project this theme is based on
 - [komari-monitor/komari](https://github.com/komari-monitor/komari)
+
+## DNS64/NAT64 and connection source
+
+Agent installation commands enable the third-party nat64.net DNS64 option by default.
+Uncheck it beside the generated command to disable it. Node admin views show reported IPs
+and the verified connection source separately; unlisted relay exits cannot grant node login IP trust.
+The backend must be updated together with the frontend. See [IP trust policy](https://github.com/zv201413/komari_new/blob/main/docs/node-ip-trust.md).

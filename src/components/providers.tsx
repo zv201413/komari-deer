@@ -14,6 +14,7 @@ import { PWAUpdatePrompt } from "@/components/PWAUpdatePrompt"
 import EarthGlobeLauncher from "@/components/EarthGlobeLauncher"
 import NetworkCapsuleBar from "@/components/NetworkCapsuleBar"
 import i18n, { detectClientLanguage } from "@/i18n/config"
+import { installDefaultEnterAction } from "@/utils/defaultEnter"
 
 function I18nClientLanguageSync() {
   React.useEffect(() => {
@@ -27,6 +28,7 @@ function I18nClientLanguageSync() {
 }
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  React.useEffect(() => installDefaultEnterAction(document), []);
   return (
     <NextThemesProvider
       attribute="class"

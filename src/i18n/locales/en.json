@@ -154,7 +154,18 @@
       "serviceName_placeholder": "Service name, leave empty to use the default name (komari-agent)",
       "setToLongTerm": "Set to Long term",
       "submit": "submit",
-      "submitting": "wait"
+      "submitting": "wait",
+      "connectionSource": "Connection source",
+      "relaySource": "Relay exit",
+      "copyConnectionSource": "Copy connection source IP",
+      "connectionSourceTip": "Connection source {{ip}} matches a displayed node IP.",
+      "connectionMismatchTip": "Connection source {{ip}} differs from the reported node addresses, possibly due to NAT64 or a proxy. This exit is excluded from node IP trust.",
+      "connectionUnverifiedTip": "No live connection source is available to verify. Node IP trust cannot be enabled yet.",
+      "trustSuspended": "Trust suspended",
+      "nat64Option": "Third-party DNS64/NAT64 compatibility (on by default)",
+      "nat64OptionTip": "Uses {{dns}} from nat64.net to connect IPv6-only nodes to IPv4 dashboards. Uncheck to disable; system DNS is unchanged.",
+      "trustLoginIPTip": "Skip login OTP only when a displayed node IP matches its live connection source. Passwords, terminal verification and sensitive actions remain required.",
+      "trustLoginIPWarning": "Verify once to manage node IP trust. Only displayed public IPs matching the live connection source can skip login 2FA. Unlisted NAT64/proxy exits are never trusted. Passwords and separate terminal verification remain required."
     },
     "notification": {
       "expire_enable": "Enable Expiration Reminder",

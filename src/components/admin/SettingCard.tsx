@@ -150,6 +150,7 @@ export function SettingCardButton({
   children,
   onClick,
   autoDisabled = true,
+  enterSubmit = false,
   ...props
 }: SettingCardProps & {
   label?: string;
@@ -157,6 +158,7 @@ export function SettingCardButton({
   children?: React.ReactNode;
   onClick?: (buttonElement: HTMLButtonElement) => void;
   autoDisabled?: boolean;
+  enterSubmit?: boolean;
 }) {
   const [disabled, setDisabled] = React.useState(false);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -177,7 +179,7 @@ export function SettingCardButton({
         <Flex>
           <Flex direction="row" gap="2" align="center">
             <label>{label}</label>
-            <Button onClick={handleClick} variant={variant} disabled={disabled}>
+            <Button data-enter-submit={enterSubmit ? "" : undefined} onClick={handleClick} variant={variant} disabled={disabled}>
               {children}
             </Button>
           </Flex>
@@ -345,17 +347,6 @@ export function SettingCardShortTextInput({
     onChange?.(e);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // 按 Enter 键时触发保存
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleSave();
-    }
-
-    // 调用外部传入的 onKeyDown 回调
-    onKeyDown?.(e);
-  };
-
   return (
     <SettingCard title={title} description={description} bordless={bordless}>
       <Flex direction="column" className="w-full mt-1" gap="2" align="start">
@@ -377,12 +368,12 @@ export function SettingCardShortTextInput({
           name={name}
           id={id}
           onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
+          onKeyDown={onKeyDown}
           ref={inputRef}
         >
         </TextField.Root>
         {children}
-        <Button
+        <Button data-enter-submit
           ref={buttonRef}
           onClick={handleSave}
           variant="solid"
@@ -463,7 +454,7 @@ export function SettingCardLongTextInput({
           ref={textAreaRef}
         />
         {showSaveButton && (
-          <Button
+          <Button data-enter-submit
             ref={buttonRef}
             onClick={handleSave}
             variant="solid"

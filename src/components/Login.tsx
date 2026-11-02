@@ -11,7 +11,6 @@ import { Flex } from "@/components/ui/flex";
 import { Text } from "@/components/ui/text";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Box } from "@/components/ui/box";
 import { useTranslation } from "react-i18next";
 import { TablerSettings } from "./Icones/Tabler";
 import { AccountProvider, useAccount } from "@/contexts/AccountContext";
@@ -95,14 +94,6 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
       }
     };
 
-    // Handle Enter key press
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-      if (e.key === "Enter" && !isLoading && isFormValid) {
-        e.preventDefault(); // Prevent form submission issues
-        handleLogin();
-      }
-    };
-
     if (loading) {
       return <Button disabled>{mounted ? t("loading") : "Loading..."}</Button>;
     }
@@ -167,7 +158,7 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
             </div>
 
           </DialogDescription>
-          <Box
+          <form
             onSubmit={(e) => {
               e.preventDefault(); // Prevent native form submission
               if (isFormValid && !isLoading) {
@@ -185,7 +176,6 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
                     <Input
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
-                      onKeyDown={handleKeyDown}
                       placeholder="admin"
                       disabled={isLoading}
                       autoFocus
@@ -198,7 +188,6 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
                     <Input
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      onKeyDown={handleKeyDown}
                       type="password"
                       placeholder={t("login.password_placeholder")}
                       disabled={isLoading}
@@ -211,7 +200,6 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
                     <Input
                       value={twoFac}
                       onChange={(e) => setTwoFac(e.target.value)}
-                      onKeyDown={handleKeyDown}
                       type="text"
                       placeholder="000000"
                       disabled={isLoading}
@@ -222,11 +210,10 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
                       {errorMsg}
                     </Text>
                   )}
-                  <Button
+                  <Button data-enter-submit
                     type="submit"
                     disabled={isLoading || !isFormValid}
                     style={{ opacity: isLoading || !isFormValid ? 0.6 : 1 }}
-                    onClick={handleLogin}
                   >
                     {isLoading ? "Logging in..." : t("login.title")}
                   </Button>
@@ -254,7 +241,7 @@ const LoginDialog = ({ trigger, autoOpen = false, showSettings = true, info, onL
                 </Button>
               )}
             </Flex>
-          </Box>
+          </form>
         </DialogContent>
       </Dialog>
     );

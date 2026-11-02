@@ -154,7 +154,18 @@
       "serviceName_placeholder": "服務名稱，為空則使用默認名稱(komari-agent)",
       "setToLongTerm": "設置為長期",
       "submit": "提交",
-      "submitting": "等待"
+      "submitting": "等待",
+      "connectionSource": "連線來源",
+      "relaySource": "中轉出口",
+      "copyConnectionSource": "複製連線來源 IP",
+      "connectionSourceTip": "連線來源 {{ip}} 與清單中的節點 IP 一致。",
+      "connectionMismatchTip": "連線來源 {{ip}} 與節點回報位址不同，可能經過 NAT64 或代理中轉。此出口不參與節點 IP 信任。",
+      "connectionUnverifiedTip": "尚無線上連線來源可驗證，暫不能開啟節點 IP 信任。",
+      "trustSuspended": "信任暫停",
+      "nat64Option": "第三方 DNS64/NAT64 相容（預設開啟）",
+      "nat64OptionTip": "使用 nat64.net 的 {{dns}}，協助 IPv6-only 節點連線至 IPv4 面板；取消勾選即關閉，不修改系統 DNS。",
+      "trustLoginIPTip": "僅當清單中的節點 IP 與線上連線來源一致時免除登入驗證碼；密碼、終端及敏感操作仍需驗證。",
+      "trustLoginIPWarning": "驗證後可逐台設定 IP 信任。只有清單中可見且與線上連線來源一致的公網 IP 可免登入 2FA；未顯示的 NAT64／代理出口不會被信任。仍需密碼，終端另行驗證。"
     },
     "notification": {
       "expire_enable": "是否啟用過期提醒",
