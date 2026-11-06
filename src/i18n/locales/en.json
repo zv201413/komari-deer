@@ -163,7 +163,7 @@
       "connectionUnverifiedTip": "No live connection source is available to verify. Node IP trust cannot be enabled yet.",
       "trustSuspended": "Trust suspended",
       "nat64Option": "Third-party DNS64/NAT64 compatibility (on by default)",
-      "nat64OptionTip": "Uses {{dns}} from nat64.net to connect IPv6-only nodes to IPv4 dashboards. Uncheck to disable; system DNS is unchanged.",
+      "nat64OptionTip": "Use system DNS first; try nat64.net {{dns}} only after lookup or connection failure to reach IPv4 dashboards from IPv6-only nodes. Uncheck to disable the fallback; system DNS is unchanged.",
       "trustLoginIPTip": "Skip login OTP only when a displayed node IP matches its live connection source. Passwords, terminal verification and sensitive actions remain required.",
       "trustLoginIPWarning": "Verify once to manage node IP trust. Only displayed public IPs matching the live connection source can skip login 2FA. Unlisted NAT64/proxy exits are never trusted. Passwords and separate terminal verification remain required."
     },

@@ -97,7 +97,10 @@ with `komari-theme.json` and the theme assets expected by Komari.
 
 ## DNS64/NAT64 and connection source
 
-Agent installation commands enable the third-party nat64.net DNS64 option by default.
+Agent installation commands enable the third-party nat64.net DNS64 fallback by default.
+They generate `--fallback-dns`: system DNS and direct connections are tried first,
+then DNS64 is used only after lookup or connection failure. Update the agent to use this behavior;
+older generated `--custom-dns 2a00:1098:2c::1` commands are compatible with the new agent.
 Uncheck it beside the generated command to disable it. Node admin views show reported IPs
 and the verified connection source separately; unlisted relay exits cannot grant node login IP trust.
 The backend must be updated together with the frontend. See [IP trust policy](https://github.com/zv201413/komari_new/blob/main/docs/node-ip-trust.md).

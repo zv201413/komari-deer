@@ -105,7 +105,7 @@ export function ActionsCell({ row }: { row: Row<z.infer<typeof schema>> }) {
         break;
       case "macos":
         finalCommand =
-            `zsh <(curl -sL https://raw.githubusercontent.com/zv201413/komari-agent_new/refs/heads/main/install.sh) ` +
+            `bash <(curl -sL https://raw.githubusercontent.com/zv201413/komari-agent_new/refs/heads/main/install.sh) ` +
             quoteShellArgs(args);
         break;
     }
